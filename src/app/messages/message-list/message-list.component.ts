@@ -8,9 +8,14 @@ import { Message } from '../message.model';
 })
 export class MessageListComponent {
   messages: Message[] = [
-    new Message(1, 'Sample Subject', 'Lorem ipsum solor dolet', 'Alex Ward'),
-    new Message(2, 'Subject Sample', 'Dolet solor ipsum lorem', 'Ward Alex'),
-    new Message(3, 'Sample sample', 'This is the true sample', 'Mr. Man'),
+    new Message(1, 'Sample Subject', 'Lorem ipsum solor dolet', 'Person 1'),
+    new Message(2, 'Subject Sample', 'Dolet solor ipsum lorem', 'Person 2'),
+    new Message(
+      3,
+      'Sample sample',
+      'Even more sample message text',
+      'Person 3'
+    ),
   ];
 
   onAddMessage(message: Message) {
