@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { Document } from '../document.model';
+import { DocumentService } from '../document.service';
 
 @Component({
   selector: 'app-document-list',
@@ -7,16 +8,15 @@ import { Document } from '../document.model';
   styleUrl: './document-list.component.css',
 })
 export class DocumentListComponent {
-  @Output() selectedDocumentEvent = new EventEmitter<Document>();
+  documents: Document[] = [];
 
-  documents = [
-    new Document(1, 'Doc1', 'First Document', 'url/1/test', []),
-    new Document(2, 'Doc2', 'Second Document', 'url/2/test', []),
-    new Document(3, 'Doc3', 'Third Document', 'url/3/test', []),
-    new Document(4, 'Doc4', 'Fourth Document', 'url/4/test', []),
-  ];
+  constructor(private documentService: DocumentService) {}
+
+  ngOnInit() {
+    this.documents = this.documentService.getDocuments();
+  }
 
   onSelectedDocument(document: Document) {
-    this.selectedDocumentEvent.emit(document);
+    this.documentService.documentSelectedEvent.emit(document);
   }
 }
