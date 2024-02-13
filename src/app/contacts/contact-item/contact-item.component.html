@@ -1,11 +1,17 @@
-<a 
-    href="#"
-    class="list-group-item clearfix"
-    (click)="onSelected()">
-    <div class="pull-left">
-        <h3 class="list-group-item-heading">{{ contact.name }}</h3>
-    </div>
-    <span class="pull-right">
-        <img src="{{contact.imageUrl}}" alt="{{ contact.name }}" class="img-responsive" style="max-height: 70px">
-    </span>
+<a
+  class="list-group-item clearfix"
+  [routerLink]="[contact.id]"
+  routerLinkActive="active"
+>
+  <div class="pull-left">
+    <h3 class="list-group-item-heading">{{ contact.name }}</h3>
+  </div>
+  <span class="pull-right">
+    <img
+      src="{{ contact.imageUrl }}"
+      alt="{{ contact.name }}"
+      class="img-responsive"
+      style="max-height: 70px"
+    />
+  </span>
 </a>
