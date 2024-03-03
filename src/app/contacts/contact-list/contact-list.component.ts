@@ -9,6 +9,7 @@ import { Subscription } from 'rxjs';
   styleUrl: './contact-list.component.css',
 })
 export class ContactListComponent implements OnInit, OnDestroy {
+  groupContacts: Contact[];
   contacts: Contact[] = [];
   private subscription: Subscription;
 

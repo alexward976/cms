@@ -10,6 +10,7 @@
       "
     >
       <img
+        *ngIf="!(contact.imageUrl == ' ')"
         src="{{ contact.imageUrl }}"
         alt="{{ contact.name }}"
         class="img-responsive"
@@ -27,5 +28,10 @@
     <p>
       <strong>Phone: {{ contact.phone }}</strong>
     </p>
+
+    <p *ngIf="contact.group"><strong>Team:</strong></p>
+    <div *ngFor="let groupContact of contact.group">
+      <app-contact-item [contact]="groupContact"> </app-contact-item>
+    </div>
   </div>
 </div>
