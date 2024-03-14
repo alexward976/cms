@@ -40,7 +40,7 @@ export class ContactEditComponent implements OnInit {
       this.editMode = true;
       this.contact = JSON.parse(JSON.stringify(this.originalContact));
 
-      if (this.contact.group !== null) {
+      if (this.contact.group !== null && this.contact.group) {
         this.groupContacts = JSON.parse(JSON.stringify(this.contact.group));
       }
     });

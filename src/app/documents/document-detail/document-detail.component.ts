@@ -20,7 +20,7 @@ export class DocumentDetailComponent implements OnInit {
     private router: Router,
     private windowRefService: WindRefService
   ) {
-    this.nativeWindow = windowRefService.getNativeWindow();
+    this.nativeWindow = this.windowRefService.getNativeWindow();
   }
 
   ngOnInit() {
